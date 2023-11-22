@@ -13,6 +13,6 @@ export class AppController {
 
   @Post()
   async saveUser(@Body() payload: UserEntity) {
-    return this.appService.saveOneUser(payload);
+    return await this.appService.saveOneUser(payload);
   }
 }

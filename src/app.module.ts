@@ -6,6 +6,7 @@ import { UserEntity } from './user.entity';
 
 @Module({
   imports: [
+    TypeOrmModule.forFeature([UserEntity]),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -18,7 +19,7 @@ import { UserEntity } from './user.entity';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService, UserEntity],
+  providers: [AppService],
   exports: [AppService],
 })
 export class AppModule {}
